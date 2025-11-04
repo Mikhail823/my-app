@@ -28,6 +28,8 @@ export const ToDOListPage = () => {
             setToDos(newTodos)
         }
 
+
+        
         const deleteTodo = (toDoItem: ToDo) =>{
             const newTodos = todos.filter((todo) => todo.id !== toDoItem.id)
             setToDos(newTodos)
