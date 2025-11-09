@@ -3,6 +3,7 @@ import { Header } from "../components/Header/Header"
 import { Form } from "../components/Form/Form"
 import { ToDoList } from "../components/ToDoList/ToDoList"
 import { ToDo } from "../models/todo-item"
+import { ToastContainer } from "react-toastify"
 export const ToDOListPage = () => {
 
     const [todos, setToDos] = useState<ToDo[]>([]);
@@ -29,7 +30,7 @@ export const ToDOListPage = () => {
         }
 
 
-        
+
         const deleteTodo = (toDoItem: ToDo) =>{
             const newTodos = todos.filter((todo) => todo.id !== toDoItem.id)
             setToDos(newTodos)
@@ -37,9 +38,10 @@ export const ToDOListPage = () => {
 
     return(
         <>
-            <Header/>
+            
             <Form createNewToDo={createNewToDo}/>
             <ToDoList todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
+            <ToastContainer />
         </>
     )
 }

@@ -21,14 +21,8 @@ export const ToDoListItem = (props: {toDoItem: ToDo, deleteTodo: Function, updat
     toast.success('Дело удалено!', {
       position: 'bottom-right'
     })
-   props.deleteTodo(props.toDoItem)
-    
-  }
-  const onClickUpdate = () => {
-    props.updateTodo(props.updateTodo)
-    toast.success('Дело обновлено', {
-      position: 'bottom-right'
-    })
+ 
+ 
   }
   
   
@@ -43,10 +37,10 @@ export const ToDoListItem = (props: {toDoItem: ToDo, deleteTodo: Function, updat
                 </button>
                 <button 
                 className={props.toDoItem.isDone ? 'btn-check' : 'btn-uncheck'}
-                onClick={() => onClickUpdate()} >
+                onClick={() => props.updateTodo(props.updateTodo)} >
 
                 </button>
-                <ToastContainer />
+                <ToastContainer  />
             </div>
         </li>
     )
